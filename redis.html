@@ -14,7 +14,7 @@
             },
             dbase: {
                 value: "{{REDIS_DB}}",
-                required: true
+                required: false
             },
             pass: {
                 value: "{{REDIS_PASSWORD}}",
@@ -22,7 +22,7 @@
             }
         },
         label: function() {
-            return this.host + ":" + this.port + "/" + this.dbase;
+            return this.dbase? this.host + ":" + this.port + "/" + this.dbase : this.host +  ":" + this.port;
         }
     });
 </script>
